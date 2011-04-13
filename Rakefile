@@ -31,3 +31,8 @@ namespace :ex do
     `rm -R .yardoc`
   end
 end
+
+# PRIVATE GEM: Remove tasks for releasing this gem to Gemcutter
+tasks = Rake.application.instance_variable_get('@tasks')
+tasks.delete('release')
+tasks.delete('gemcutter:release')
